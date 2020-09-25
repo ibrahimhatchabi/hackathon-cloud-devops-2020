@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn clean package'
+                sh 'cd todolist/ && ./mvnw clean package'
             }
         }
 
