@@ -15,11 +15,11 @@ pipeline {
             }
         }
 
-        stage('Deploy on server'){
+        stage('Deploying'){
 
             when { branch 'dev' }
             steps {
-                sh 'TODO Deploy to dev server'
+                sh 'echo TODO: Deploy to dev server'
             }
         }
     }
