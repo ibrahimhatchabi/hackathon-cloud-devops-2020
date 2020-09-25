@@ -2,13 +2,6 @@ pipeline {
 
     agent any
     
-    properties([pipelineTriggers([githubPush()])])
-
-    tools {
-        /* the tool name must be pre-configured in Jenkins under Manage Jenkins -> Global Tool Configuration */
-        maven 'MAVEN_HOME'
-    }
-    
     stages {
         
         stage('Package') {
@@ -32,6 +25,8 @@ pipeline {
     }
     
     post {
-        sh 'echo congratulations!!! You did it'
+        failure {
+            sh 'echo Build Failed, TODO send email !!!!!!!!!!!!'
+        }
     }
 }
